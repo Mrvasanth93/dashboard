@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-size: 15px;
 }
 .gigs .filters{
   display: flex;
@@ -92,6 +93,7 @@
   table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0px 10px;
+  color: purple;
 }
 .gigs table thead{
   border: none;
@@ -120,25 +122,50 @@
   border: none;
   outline: none;
   cursor: pointer;
+  width: fit-content;
+  font-size: 15px;
+  color: purple;
 }
 .gigs .table table tbody .status select option{
   background-color: rgb(255, 255, 255);
   cursor: pointer;
+  font-size: 15px;
+  width: fit-content;
+  color: purple;
 }
 @media (max-width:750px) {
   .gigs .table table .views , .orders {
-    width: 10%;
+    width: 12%;
+    font-size: 10px;
   }
-  .gigs .table table .status{
-    width: 25%;
+  .gigs .table table .actions{
+    width: 35%;
+    padding-left:15px;
+    font-size: 10px;
   }
   .gigs .table table .earnings{
-    width: 15%;
+    width: 17%;
+    font-size: 10px;
   }
   .gigs .table table .tittle{
-    width: 20%;
+    width: 15%;
+    font-size: 10px;
   }
   .gigs .serch-add .add-btn{
-    width: 120px;
+    width: 100px;
+    font-size: 10px;
+  }
+  .gigs .serch-add .serch-box{
+    width: 150px;
+  }
+
+  .gigs .table table tbody .status select option{
+    font-size: 8px;
+  }
+  .gigs table tbody{
+    font-size: 10px;
+  }
+  .gigs .table table tbody .status select{
+    font-size: 10px;
   }
 }

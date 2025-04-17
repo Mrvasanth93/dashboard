@@ -36,7 +36,7 @@ const Gigs = () =>{
                                 <th className="views">Views</th>
                                 <th className="orders">Orders</th>
                                 <th className="earnings">Earnings</th>
-                                <th className="status">Status</th>
+                                <th className="actions">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,6 +47,7 @@ const Gigs = () =>{
                                 <td>30000</td>
                                 <td className="status">
                                     <select name="" id="">
+                                        <option value="">Select</option>
                                         <option value="">Active</option>
                                         <option value="">Completed</option>
                                     </select>
@@ -59,6 +60,7 @@ const Gigs = () =>{
                                 <td>30000</td>
                                 <td className="status">
                                     <select name="" id="">
+                                    <option value="">Select</option>
                                         <option value="">Active</option>
                                         <option value="">Completed</option>
                                     </select>
@@ -71,6 +73,7 @@ const Gigs = () =>{
                                 <td>30000</td>
                                 <td className="status">
                                     <select name="" id="">
+                                        <option value="">Select</option>
                                         <option value="">Active</option>
                                         <option value="">Completed</option>
                                     </select>
