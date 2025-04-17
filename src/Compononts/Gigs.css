@@ -1,0 +1,144 @@
+.gigs {
+  width: 100%;
+  color: black;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.gigs .filters{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 96%;
+}
+.gigs .filters .filters1 , .filters2 , .filters3{
+  width: 28%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  height: 80px;
+  display: flex;
+  align-items: start;
+  justify-content:center;
+  flex-direction: column;
+  padding-left: 10px;
+  box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.219),
+              -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.219);
+}
+.gigs .filters .count{
+  font-size: 20px;
+}
+.gigs .filters .filter-name h6{
+  font-size: 10px;
+  margin-top: 5px;
+  color: rgba(0, 0, 0, 0.521);
+}
+.gigs .serch-add{
+  width: 90%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+.gigs .serch-add .serch-box{
+  width: 250px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.gigs .serch-add .serch-box input{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.507);
+  outline: none;
+  padding-left: 5px;
+  letter-spacing: 1px;
+  padding-right: 5px;
+  box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.219),
+              -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.219);
+  border: none;
+}
+.gigs .serch-add .serch-box input::placeholder{
+  color: rgba(0, 0, 0, 0.219);
+}
+.gigs .serch-add .add-btn{
+  width: 150px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.219),
+              -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.219);
+}
+.gigs .table{
+  width: 90%;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.219),
+              -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.219);
+}
+.gigs .table table{
+  width: 100%;
+  border-radius: 10px;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+}
+.gigs table thead{
+  border: none;
+  outline: none;
+}
+.gigs table thead tr{
+  border: 0;
+}
+.gigs  table tr th{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.gigs .table table tbody tr td {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  height: 30px;
+  padding-left: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.233);
+}
+.gigs .table table tbody .status select{
+  padding: 3px;
+  border-radius:5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.gigs .table table tbody .status select option{
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+@media (max-width:750px) {
+  .gigs .table table .views , .orders {
+    width: 10%;
+  }
+  .gigs .table table .status{
+    width: 25%;
+  }
+  .gigs .table table .earnings{
+    width: 15%;
+  }
+  .gigs .table table .tittle{
+    width: 20%;
+  }
+  .gigs .serch-add .add-btn{
+    width: 120px;
+  }
+}
