@@ -14,7 +14,7 @@
   justify-content: space-evenly;
   width: 96%;
 }
-.gigs .filters .filters1 , .filters2 , .filters3{
+.gigs .filters .filters1 , .filters2 , .filters3 , .filters4{
   width: 28%;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
@@ -90,65 +90,44 @@
 .gigs .table table{
   width: 100%;
   border-radius: 10px;
-  table-layout: fixed;
+  table-layout: auto;
   border-collapse: separate;
   border-spacing: 0px 10px;
   color: purple;
 }
 .gigs table thead{
-  border: none;
-  outline: none;
+  
 }
 .gigs table thead tr{
-  border: 0;
+  border: 1px solid black;
 }
 .gigs  table tr th{
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: left;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 3px;
+  width: fit-content;
 }
 .gigs .table table tbody tr td {
+  cursor: pointer;
   padding-top: 15px;
   padding-bottom: 10px;
   height: 30px;
-  padding-left: 10px;
+  padding-left: 3px;
   border-top: 1px solid rgba(0, 0, 0, 0.233);
-}
-.gigs .table table tbody .status select{
-  padding: 3px;
-  border-radius:5px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  width: fit-content;
-  font-size: 15px;
-  color: purple;
-}
-.gigs .table table tbody .status select option{
-  background-color: rgb(255, 255, 255);
-  cursor: pointer;
-  font-size: 15px;
-  width: fit-content;
-  color: purple;
 }
 @media (max-width:750px) {
   .gigs .table table .views , .orders {
-    width: 12%;
     font-size: 10px;
   }
   .gigs .table table .actions{
-    width: 35%;
     padding-left:15px;
     font-size: 10px;
   }
   .gigs .table table .earnings{
-    width: 17%;
     font-size: 10px;
   }
   .gigs .table table .tittle{
-    width: 15%;
     font-size: 10px;
   }
   .gigs .serch-add .add-btn{
@@ -170,7 +149,15 @@
   }
 }
 @media (max-width:300px) {
-  .gigs .table table{
-    font-size: 30px;
+
+  .gigs .filters .filters1, .filters2 , .filters3, .filters4{
+    width: 25%;
+    
   }
+}
+.table table thead tr th{
+  width: 0;
+}
+.table table tbody tr td{
+  width: 0;
 }

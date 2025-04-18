@@ -51,4 +51,8 @@
     .nav .nav-bottom-2{
         display: none;
     }
+    .nav{
+        position: sticky;
+        top: 0;
+    }
 }

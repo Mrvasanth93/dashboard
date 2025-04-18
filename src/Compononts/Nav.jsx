@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import "./Nav.css"
 const Nav = () =>{
+    const navigate = useNavigate();
     return(
         <>
             <div className="nav">
@@ -9,10 +11,10 @@ const Nav = () =>{
                 </div>
                 <div className="nav-bottom-1">
                     <div>
-                        <div>Dashboard</div>
-                        <div>Gigs</div>
-                        <div>My Orders</div>
-                        <div>Earnings</div>
+                        <div onClick={()=>{navigate("/")}}>Dashboard</div>
+                        <div onClick={()=>{navigate("/gigs")}}>Gigs</div>
+                        <div onClick={()=>{navigate("/orders")}}>My Orders</div>
+                        <div onClick={()=>{navigate("/earnings")}}>Earnings</div>
                     </div>
                 </div>
                 <div className="nav-bottom-2">

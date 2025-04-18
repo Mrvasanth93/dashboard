@@ -1,31 +1,21 @@
-import { useEffect, useState } from "react";
 import "./Gigs.css"
-import GigUpdateModal from "./Modals/UpdateModal";
-const Gigs = () =>{
-    const [showModal,setShowModal] = useState();
-    useEffect(()=>{
-        if(showModal == false){
-           setShowModal(true)
-        }
-    },[showModal])
+import Nav from "./Nav";
+const Dashboard = () =>{
     return(
         <>
-            {
-                showModal && <GigUpdateModal/>
-            }
             <div className="gigs">
                 <div className="filters">
                     <div className="filters1">
-                        <div className="count">20</div>
-                        <div className="filter-name"><h6>All Gigs</h6></div>
+                        <div className="count">12</div>
+                        <div className="filter-name"><h6>Dashborad</h6></div>
                     </div>
                     <div className="filters2">
-                        <div className="count">16</div>
+                        <div className="count">12</div>
                         <div className="filter-name" ><h6>Active Gigs</h6></div>
                     </div>
                     <div className="filters3">
-                        <div className="count">4</div>
-                        <div className="filter-name"><h6>Approvel Gigs</h6></div>
+                        <div className="count">12</div>
+                        <div className="filter-name"><h6>Completed Gigs</h6></div>
                     </div>
                 </div>
                 <div className="serch-add">
@@ -46,7 +36,7 @@ const Gigs = () =>{
                                 <th className="views">Views</th>
                                 <th className="orders">Orders</th>
                                 <th className="earnings">Earnings</th>
-                                <th className="actions">Actions</th>
+                                <th className="actions">Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,43 +45,36 @@ const Gigs = () =>{
                                 <td>20</td>
                                 <td>7</td>
                                 <td>30000</td>
-                                <td onClick={()=>{setShowModal(!showModal)}}>...</td>
+                                <td className="status">
+                                    <select name="" id="">
+                                        <option value="">Active</option>
+                                        <option value="">Completed</option>
+                                    </select>
+                                </td>
                             </tr>
-                        </tbody>
-                        <tbody>
+                            <tr>
+                                <td>Figma to psd </td>
+                                <td>20</td>
+                                <td>7</td>
+                                <td>30000</td>
+                                <td className="status">
+                                    <select name="" id="">
+                                        <option value="">Active</option>
+                                        <option value="">Completed</option>
+                                    </select>
+                                </td>
+                            </tr>
                             <tr>
                                 <td>Web design</td>
                                 <td>20</td>
                                 <td>7</td>
                                 <td>30000</td>
-                                <td onClick={()=>{setShowModal(!showModal)}}>...</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>Web design</td>
-                                <td>20</td>
-                                <td>7</td>
-                                <td>30000</td>
-                                <td onClick={()=>{setShowModal(!showModal)}}>...</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>Web design</td>
-                                <td>20</td>
-                                <td>7</td>
-                                <td>30000</td>
-                                <td onClick={()=>{setShowModal(!showModal)}}>...</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>Web design</td>
-                                <td>20</td>
-                                <td>7</td>
-                                <td>30000</td>
-                                <td onClick={()=>{setShowModal(!showModal)}}>...</td>
+                                <td className="status">
+                                    <select name="" id="">
+                                        <option value="">Active</option>
+                                        <option value="">Completed</option>
+                                    </select>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -101,4 +84,4 @@ const Gigs = () =>{
     )
 }
 
-export default Gigs;
+export default Dashboard;

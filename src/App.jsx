@@ -7,6 +7,7 @@ import Nav from './Compononts/Nav'
 import Orders from './Compononts/Orders'
 import Earnings from './Compononts/Earnings'
 import { Route, Router, Routes } from 'react-router-dom'
+import Dashboard from './Compononts/Dashboard'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <div className="dashboard-main">
           <Nav/>
           <Routes>
+            <Route path='/' element={<Dashboard/>}/>
             <Route path='/gigs' element={<Gigs/>}/>
             <Route path='/earnings' element={<Earnings/>}/>
             <Route path='/orders' element={<Orders/>}/>
