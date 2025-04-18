@@ -63,7 +63,8 @@
 }
 .profile{
     background-color: orangered;
-    padding: 3px 10px;
+    padding: 2px 5px;
     color: white;
     border-radius: 5px;
+    font-size: 12px;
 }
