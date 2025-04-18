@@ -15,10 +15,13 @@
   display: flex;
   justify-content: left;
   margin-bottom: 10px;
+  display: flex;
+  align-items: start;
 }
 .main .dashBoard .dashboard-main{
   display: flex;
+  align-items: start;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
-  background-color: whitesmoke;
 }

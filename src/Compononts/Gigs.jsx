@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Gigs.css"
-import GigUpdateModal from "./Modals/UpdateModal";
+import { GigUpdateModal} from "./Modals/UpdateModal";
 const Gigs = () =>{
     const [showModal,setShowModal] = useState();
     useEffect(()=>{

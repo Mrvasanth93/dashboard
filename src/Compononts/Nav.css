@@ -56,3 +56,9 @@
         top: 0;
     }
 }
+.profile{
+    background-color: orangered;
+    padding: 5px 15px;
+    color: white;
+    border-radius: 5px;
+}

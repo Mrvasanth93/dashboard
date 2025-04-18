@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react";
 import "./UpdateModal.css"
-const GigUpdateModal = () => {
+export const GigUpdateModal = () => {
     const modal = useRef();
-    const closeModal = () =>{
-       modal.current.style.display = "none"
+    const closeModal = () => {
+        modal.current.style.display = "none"
     }
-    useEffect(()=>{
+    useEffect(() => {
         modal.current.style.display = ""
-    },[modal])
+    }, [modal])
     return (
         <>
             <div ref={modal} className="modal">
@@ -16,7 +16,7 @@ const GigUpdateModal = () => {
                     <hr />
                     <div className="update">
                         <div>
-                            <h5>Marked as :</h5>
+                            <h5>Gig Status : </h5>
                             <select name="" id="">
                                 <option value="">Active</option>
                                 <option value="">Approvel pending</option>
@@ -33,5 +33,40 @@ const GigUpdateModal = () => {
         </>
     )
 }
-
-export default GigUpdateModal;
+export const OrderUpdateModal = () => {
+    const modal = useRef();
+    const closeModal = () => {
+        modal.current.style.display = "none"
+    }
+    useEffect(() => {
+        modal.current.style.display = ""
+    }, [modal])
+    return (
+        <>
+            <div ref={modal} className="modal">
+                <div className="content">
+                    <h3>Actions</h3>
+                    <hr />
+                    <div className="update">
+                        <div>
+                            <h5> Order Status : </h5>
+                            <select name="" id="">
+                                <option value="">Avtive</option>
+                                <option value="">Completed</option>
+                            </select>
+                            <h5> Payment Status : </h5>
+                            <select name="" id="">
+                                <option value="">Not recived</option>
+                                <option value="">Received</option>
+                            </select>
+                            <div className="btns">
+                                <div onClick={closeModal}>Close</div>
+                                <div>Update</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}

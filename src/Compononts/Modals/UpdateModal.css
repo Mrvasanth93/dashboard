@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.514);
+    height: 143%;
 }
 .modal .content{
     background-color: rgba(255, 255, 255, 0.986);
@@ -13,6 +13,7 @@
     height: fit-content;
     border-radius: 10px;
     padding-bottom: 20px;
+    min-height: 200px;
 }
 .modal h3{
     text-align: center;
@@ -44,12 +45,20 @@
     outline: none;
     padding-left: 1px;
     margin-left: 0px;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.562),
+              -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.562);
+    cursor: pointer;       
+    font-size: 15px;   
+}
+.modal .update div select option{
+    font-size: 15px;
 }
 .modal .update .btns{
     margin-top: 20px;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     font-size: 13px;
 }

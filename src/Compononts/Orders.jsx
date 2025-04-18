@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import "./Gigs.css"
-import GigUpdateModal from "./Modals/UpdateModal";
+import { OrderUpdateModal } from "./Modals/UpdateModal";
 const Orders = () =>{
     const [showModal,setShowModal] = useState();
     useEffect(()=>{
@@ -11,7 +11,7 @@ const Orders = () =>{
     return(
         <>
             {
-                showModal && <GigUpdateModal/>
+                showModal && <OrderUpdateModal/>
             }
             <div className="gigs">
                 <div className="filters">

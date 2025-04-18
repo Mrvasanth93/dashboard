@@ -7,7 +7,9 @@ const Nav = () =>{
             <div className="nav">
                 <div className="nav-top">
                     <div>Admin dashboard</div>
-                    <div>profile</div>
+                    <div className="profile">
+                        Name
+                    </div>
                 </div>
                 <div className="nav-bottom-1">
                     <div>
