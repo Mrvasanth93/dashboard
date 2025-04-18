@@ -20,9 +20,9 @@ function App() {
           <Nav/>
           <Routes>
             <Route path='/dashboard' element={<Dashboard/>}/>
-            <Route path='/gigs' element={<Gigs/>}/>
-            <Route path='/earnings' element={<Earnings/>}/>
-            <Route path='/orders' element={<Orders/>}/>
+            <Route path='/dashboard/gigs' element={<Gigs/>}/>
+            <Route path='/dashboard/earnings' element={<Earnings/>}/>
+            <Route path='/dashboard/orders' element={<Orders/>}/>
           </Routes>
         </div>
         </div>

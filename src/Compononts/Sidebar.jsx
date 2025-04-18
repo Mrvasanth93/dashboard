@@ -37,19 +37,19 @@ const Sidebar = ()=>{
                         </div>
                         <h1 className="txt" >{isActive && "Dash Board"}</h1>
                     </div>
-                    <div onClick={()=>{navigate("/gigs")}} className="btn">
+                    <div onClick={()=>{navigate("/dashboard/gigs")}} className="btn">
                         <div className="icon">
                             <img src={gigsIcon} alt="" />
                         </div>
                         <h1 className="txt">{isActive && "Gigs"}</h1>
                     </div>
-                    <div onClick={()=>{navigate("/orders")}} className="btn">
+                    <div onClick={()=>{navigate("/dashboard/orders")}} className="btn">
                         <div className="icon">
                             <img src={ordersIcon} alt="" />
                         </div>
                         <h1 className="txt">{isActive && "My Orders"}</h1>
                     </div>
-                    <div onClick={()=>{navigate("/earnings")}} className="btn">
+                    <div onClick={()=>{navigate("/dashboard/earnings")}} className="btn">
                         <div className="icon">
                             <img src={earningsIcon} alt="" />
                         </div>

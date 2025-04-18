@@ -12,9 +12,9 @@ const Nav = () =>{
                 <div className="nav-bottom-1">
                     <div>
                         <div onClick={()=>{navigate("/dashboard")}}>Dashboard</div>
-                        <div onClick={()=>{navigate("/gigs")}}>Gigs</div>
-                        <div onClick={()=>{navigate("/orders")}}>My Orders</div>
-                        <div onClick={()=>{navigate("/earnings")}}>Earnings</div>
+                        <div onClick={()=>{navigate("/dashboard/gigs")}}>Gigs</div>
+                        <div onClick={()=>{navigate("/dashboard/orders")}}>My Orders</div>
+                        <div onClick={()=>{navigate("/dashboard/earnings")}}>Earnings</div>
                     </div>
                 </div>
                 <div className="nav-bottom-2">
