@@ -19,7 +19,7 @@ function App() {
         <div className="dashboard-main">
           <Nav/>
           <Routes>
-            <Route path='/' element={<Dashboard/>}/>
+            <Route path='/dashboard' element={<Dashboard/>}/>
             <Route path='/gigs' element={<Gigs/>}/>
             <Route path='/earnings' element={<Earnings/>}/>
             <Route path='/orders' element={<Orders/>}/>
