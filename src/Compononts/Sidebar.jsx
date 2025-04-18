@@ -31,7 +31,7 @@ const Sidebar = ()=>{
                     <div ref={menubtn} onClick={()=>{handleSideBar()}}><img src={isActive ? close : menuIcon} alt="" /></div>
                 </div>
                 <div className="sidebar-btns">
-                    <div onClick={()=>{navigate("/")}} className="btn">
+                    <div onClick={()=>{navigate("/dashboard")}} className="btn">
                         <div className="icon">
                             <img src={dashboardIcon} alt="" />
                         </div>
