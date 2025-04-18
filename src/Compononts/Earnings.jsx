@@ -19,13 +19,8 @@ const Earnings = () =>{
                     </div>
                 </div>
                 <div className="serch-add">
-                    <div className="serch-box">
+                    <div style={{width:"100%" }} className="serch-box">
                         <input placeholder="Serch gigs" type="text" name="" id="" />
-                    </div>
-                    <div className="add-btn">
-                        <div className="btn">
-                            + Add New Gig
-                        </div>
                     </div>
                 </div>
                 <div className="table">

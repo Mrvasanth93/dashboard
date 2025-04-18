@@ -1,13 +1,13 @@
 .modal{
-    width: 96.5%;
+    width:99%;
     position: absolute;
     display: flex;
     justify-content: center;
-    height: 150vh;
+    align-items: center;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.514);
 }
 .modal .content{
-    margin-top: 100px;
     background-color: rgba(255, 255, 255, 0.986);
     width:80%;
     height: fit-content;

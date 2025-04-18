@@ -45,7 +45,7 @@ const Gigs = () =>{
                                 <th className="tittle">Tittle</th>
                                 <th className="views">Views</th>
                                 <th className="orders">Orders</th>
-                                <th className="earnings">Earnings</th>
+                                <th className="earnings">Earn</th>
                                 <th className="actions">Actions</th>
                             </tr>
                         </thead>

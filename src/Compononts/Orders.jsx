@@ -29,13 +29,8 @@ const Orders = () =>{
                     </div>
                 </div>
                 <div className="serch-add">
-                    <div className="serch-box">
+                    <div style={{width:"100%" }} className="serch-box">
                         <input placeholder="Serch gigs" type="text" name="" id="" />
-                    </div>
-                    <div className="add-btn">
-                        <div className="btn">
-                            + Add New Gig
-                        </div>
                     </div>
                 </div>
                 <div className="table">
@@ -44,7 +39,6 @@ const Orders = () =>{
                             <tr>
                                 <th className="tittle">Tittle</th>
                                 <th className="views">Order ID</th>
-                                <th className="orders">Buyer</th>
                                 <th className="earnings">Status</th>
                                 <th className="views">Payment</th>
                                 <th className="actions">Actions</th>
@@ -53,8 +47,7 @@ const Orders = () =>{
                         <tbody>
                             <tr>
                                 <td>Web design</td>
-                                <td>#2031313243</td>
-                                <td>Vasanth</td>
+                                <td>#203131</td>
                                 <td>Completed</td>
                                 <td className="status">
                                     pending
