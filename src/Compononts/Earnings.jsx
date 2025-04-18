@@ -11,11 +11,11 @@ const Earnings = () =>{
                     </div>
                     <div className="filters2">
                         <div className="count">$ 4000</div>
-                        <div className="filter-name" ><h6>Clearence Pending</h6></div>
+                        <div className="filter-name" ><h6>Pending</h6></div>
                     </div>
                     <div className="filters3">
                         <div className="count">$ 60,000</div>
-                        <div className="filter-name"><h6>Completed Gigs</h6></div>
+                        <div className="filter-name"><h6>Withdrawn</h6></div>
                     </div>
                 </div>
                 <div className="serch-add">
