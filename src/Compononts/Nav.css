@@ -15,7 +15,40 @@
     padding-right: 20px;
     padding-top: 10px;
 }
-.nav .nav-bottom{
-    padding-left: 10px;
-    padding-bottom: 10px;
+.nav .nav-bottom-1{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+.nav .nav-bottom-1 div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+.nav .nav-bottom-1 div div{
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 3px;
+}
+.nav .nav-bottom-1 div div:hover{
+    color: white;
+    background-color: rgba(128, 0, 128, 0.575);
+}
+.nav-bottom-2{
+    font-size: 10px;
+    margin-left:10px;
+    margin-bottom: 5px;
+}
+@media (min-width:500px) {
+    .nav .nav-bottom-1{
+        display: none;
+    }
+}
+@media (max-width:500px) {
+    .nav .nav-bottom-2{
+        display: none;
+    }
 }

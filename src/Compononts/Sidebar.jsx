@@ -16,7 +16,7 @@ const Sidebar = ()=>{
     const sideBarClassName = "sidebar"
     const handleSideBar = () =>{
         if(isActive == true){
-            sideBar.current.style.width = "80px";
+            sideBar.current.style.width = "50px";
         }
         else{
             sideBar.current.style.width = "250px";

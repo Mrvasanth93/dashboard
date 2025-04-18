@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 10px;
   cursor: pointer;
 }
 .sidebar .menu-btn div{
@@ -26,7 +26,7 @@
   align-items:start;
   justify-content: center;
   flex-direction: column;
-  margin-left: 15px;
+  margin-left: 5px;
   margin-right: 5px;
 }
 .sidebar .sidebar-btns .btn{
@@ -66,14 +66,15 @@
   .sidebar .sidebar-btns .txt{
     display: none;
   }
+  .sidebar .sidebar-btns .icon{
+    width: 100px;
+  }
+}
+@media (max-width:500px) {
+  .sidebar{
+    display: none;
+  }
 }
 .sidebar .sidebar-btns .txt{
   font-size: 15px;
-}
-@media (max-width:80px) {
-  .sidebar .sidebar-btns{
-    justify-content: center;
-    display: flex;
-    align-items: center;
-  }
 }

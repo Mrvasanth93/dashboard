@@ -7,8 +7,16 @@ const Nav = () =>{
                     <div>Admin dashboard</div>
                     <div>profile</div>
                 </div>
-                <div className="nav-bottom">
-                    <h6>Dashboard &gt; Gigs</h6>
+                <div className="nav-bottom-1">
+                    <div>
+                        <div>Dashboard</div>
+                        <div>Gigs</div>
+                        <div>My Orders</div>
+                        <div>Earnings</div>
+                    </div>
+                </div>
+                <div className="nav-bottom-2">
+                    <div>Dashboard</div>
                 </div>
             </div>
         </>

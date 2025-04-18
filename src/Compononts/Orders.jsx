@@ -36,7 +36,7 @@ const Orders = () =>{
                                 <th className="views">Views</th>
                                 <th className="orders">Orders</th>
                                 <th className="earnings">Earnings</th>
-                                <th className="status">Status</th>
+                                <th className="actions">Status</th>
                             </tr>
                         </thead>
                         <tbody>
