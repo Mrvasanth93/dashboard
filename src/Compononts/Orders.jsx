@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import "./Gigs.css"
 import { OrderUpdateModal } from "./Modals/UpdateModal";
+import { orderData } from "./DummyData";
 const Orders = () =>{
     const [showModal,setShowModal] = useState();
     useEffect(()=>{
@@ -8,6 +9,8 @@ const Orders = () =>{
                setShowModal(true)
             }
         },[showModal])
+        const [data,setData] = useState(orderData)
+        console.log(data);
     return(
         <>
             {
@@ -46,15 +49,17 @@ const Orders = () =>{
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Web design</td>
-                                <td>#203131</td>
-                                <td>Completed</td>
+                            {
+                                data.map((val)=>{ return <tr>
+                                <td>{val.title}</td>
+                                <td>{val.orderId}</td>
+                                <td>{val.status}</td>
                                 <td className="status">
-                                    pending
+                                   {val.payment}
                                 </td>
                                 <td onClick={()=>{setShowModal(!showModal)}}>...</td>
-                            </tr>
+                            </tr>})
+                            }
                             
                         </tbody>
                     </table>

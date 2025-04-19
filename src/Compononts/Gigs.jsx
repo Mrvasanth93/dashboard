@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Gigs.css"
 import { GigUpdateModal} from "./Modals/UpdateModal";
+import { gigData } from "./DummyData";
 const Gigs = () =>{
     const [showModal,setShowModal] = useState();
     useEffect(()=>{
@@ -8,6 +9,7 @@ const Gigs = () =>{
            setShowModal(true)
         }
     },[showModal])
+    const [data,setData] = useState(gigData);
     return(
         <>
             {
@@ -51,49 +53,15 @@ const Gigs = () =>{
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Web design</td>
-                                <td>20</td>
-                                <td>7</td>
-                                <td>30000</td>
+                            {
+                                data.map((val) => {return <tr>
+                                <td>{val.title}</td>
+                                <td>{val.views}</td>
+                                <td>{val.orders}</td>
+                                <td>{val.earning}</td>
                                 <td onClick={()=>{setShowModal(!showModal)}}>...</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>Web design</td>
-                                <td>20</td>
-                                <td>7</td>
-                                <td>30000</td>
-                                <td onClick={()=>{setShowModal(!showModal)}}>...</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>Web design</td>
-                                <td>20</td>
-                                <td>7</td>
-                                <td>30000</td>
-                                <td onClick={()=>{setShowModal(!showModal)}}>...</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>Web design</td>
-                                <td>20</td>
-                                <td>7</td>
-                                <td>30000</td>
-                                <td onClick={()=>{setShowModal(!showModal)}}>...</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>Web design</td>
-                                <td>20</td>
-                                <td>7</td>
-                                <td>30000</td>
-                                <td onClick={()=>{setShowModal(!showModal)}}>...</td>
-                            </tr>
+                            </tr>})
+                            }
                         </tbody>
                     </table>
                 </div>
