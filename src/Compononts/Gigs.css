@@ -63,9 +63,10 @@
   box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.562),
               -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.562);
   border: none;
+  font-size: 10px;
 }
 .gigs .serch-add .serch-box input::placeholder{
-  color: rgba(0, 0, 0, 0.219);
+  color: rgba(0, 0, 0, 0.555);
 }
 .gigs .serch-add .add-btn{
   width: 150px;

@@ -33,6 +33,7 @@ const Orders = () =>{
                         <input placeholder="Serch gigs" type="text" name="" id="" />
                     </div>
                 </div>
+                <h6 className="pageName">Orders</h6>
                 <div className="table">
                     <table>
                         <thead >

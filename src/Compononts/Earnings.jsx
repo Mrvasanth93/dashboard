@@ -23,6 +23,7 @@ const Earnings = () =>{
                         <input placeholder="Serch gigs" type="text" name="" id="" />
                     </div>
                 </div>
+                <h6 className="pageName">Earnings</h6>
                 <div className="table">
                     <table>
                         <thead >

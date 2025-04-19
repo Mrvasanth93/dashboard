@@ -7,6 +7,13 @@
     justify-content: center;
     flex-direction: column;
     font-size: 15px;
+    min-height: 100vhś;
+}
+
+.gigs .pageName{
+    width:90%;
+    margin-top: 10px;
+    font-size: 12px;
 }
 
 .gigs .filters {
@@ -20,10 +27,11 @@
 .filters2,
 .filters3,
 .filters4 {
+    cursor: pointer;
     width: 28%;
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
-    height: 120px;
+    height: 80px;
     display: flex;
     align-items: start;
     justify-content: center;
@@ -32,10 +40,8 @@
     box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.562),
         -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.562);
 }
-
 .gigs .filters .count {
     font-size: 20px;
-    margin: 0;
 }
 
 .gigs .filters .filter-name h6 {
@@ -43,40 +49,91 @@
     margin-top: 5px;
     color: rgba(0, 0, 0, 0.521);
 }
-
-.gigs .filters .about {
-    color: purple;
-    font-weight: bolder;
-    letter-spacing: 0.5px;
-    margin-top: 10px;
-    font-size: 13px;
-    text-align: justify;
-    padding-right: 10px;
-}
-
-.gigs .updates {
-    width:90%;
+.updates{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     margin-top: 20px;
-    display: grid;
-    align-items:center;
+}
+.updates .update-content{
+    width: 90%;
+}
+.updates .update-content .head{
+    border-bottom: 2px solid rgba(128, 0, 128, 0.329);
+    padding-bottom: 5px;
+    width: fit-content;
+
+}
+.updates .update-content .update{
+    margin-top: 20px;
+    border-radius: 3px;
+    box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.562),
+        -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.562);
+    width: 40%;
+    margin: 10px 10px;
+    display: flex;
+    align-items: start;
     justify-content: center;
     flex-direction: column;
-    margin: 0;
+    display: inline-flex;
 }
-.gigs h5{
-    width: 90%;
-    margin-top: 30px;
-    text-align: left;
+@media (max-width:850px) {
+    .updates .update-content .update{
+       width: 100%;
+       margin: 0;
+       margin-top: 20px;
+    }
 }
-.gigs .updates .update{
-    width: fit-content;
-    margin-top: 20px;
-    height: 40px;
+
+.updates .update-content .update h6{
+    margin-left: 5px;
+    margin-top: 5px;
+    color: teal;
+}
+.updates .update-content .heading{
+    padding-left: 10px;
+}
+.updates .update-content .update .updateuser{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding-left: 15px;
+    margin-top: 10px;
+}
+.updates .update-content .update .updateuser .profile{
+    background-color: rgb(0, 255, 170);
+    width: 15px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 30px;
-    border-radius: 5px;
-    box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.562),
-              -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.562);
+    border-radius: 50%;
+    color: black;
+    border: none;
+}
+.updates .update-content .update .msg-time{
+    padding-left: 15px;
+    display: flex;
+    align-items:end;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.541);
+    line-height: 20px;
+    margin-top: 10px;
+    text-align: justify;
+}
+.updates .update-content .update .msg-time .time {
+    color: red;
+    padding: 0;
+    height: 20px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+.updates .update-content .update .msg-time .msg{
+    width: 84%;
+}
+.updates .update-content .update .msg-time .time h6{
+    color: purple;
 }

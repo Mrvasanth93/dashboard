@@ -38,6 +38,7 @@ const Gigs = () =>{
                         </div>
                     </div>
                 </div>
+                <h6 className="pageName">All Gigs</h6>
                 <div className="table">
                     <table>
                         <thead >
