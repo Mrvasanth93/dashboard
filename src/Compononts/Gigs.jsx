@@ -1,38 +1,62 @@
-import { useEffect, useState } from "react";
+import { act, useEffect, useState } from "react";
 import "./Gigs.css"
-import { GigUpdateModal} from "./Modals/UpdateModal";
+import { GigUpdateModal } from "./Modals/UpdateModal";
 import { gigData } from "./DummyData";
-const Gigs = () =>{
-    const [showModal,setShowModal] = useState();
-    useEffect(()=>{
-        if(showModal == false){
-           setShowModal(true)
+const Gigs = () => {
+    const [data, setData] = useState(gigData);
+    const [showModal, setShowModal] = useState();
+    const [serchData, setSerchdData] = useState();
+    const [show,setShow] = useState("all")
+    const [totalGigs,setTotalGigs] = useState(data.length);
+    const [activeGigs,setActiveGigs] = useState();
+    const [aproovelWaitingGigs,setAproovelWaitingGigs] = useState();
+    console.log(data);
+    useEffect(() => {
+        handleDataModify(serchData);
+    }, [serchData])
+    const handleDataModify = (serchData) => {
+        if (serchData == undefined || serchData == "" || serchData == null) {
+            setData(gigData)
         }
-    },[showModal])
-    const [data,setData] = useState(gigData);
-    return(
+        else {
+            setData(data.filter((val) => { return val.title.toLowerCase().includes(serchData) }));
+        }
+    }
+    useEffect(() => {
+        if (showModal == false) {
+            setShowModal(true)
+        }
+    }, [showModal])
+    const calculateGigs = () =>{
+        setActiveGigs(()=>{return data.filter((data)=>data.status == "active").length})
+        setAproovelWaitingGigs(()=>{return data.filter((data)=>data.status == "approval waiting").length})
+     }
+     useEffect(()=>{
+         calculateGigs();
+     },[])
+    return (
         <>
             {
-                showModal && <GigUpdateModal/>
+                showModal && <GigUpdateModal />
             }
             <div className="gigs">
                 <div className="filters">
-                    <div className="filters1">
-                        <div className="count">20</div>
+                    <div onClick={()=>{setShow("all")}} className="filters1">
+                        <div className="count">{totalGigs}</div>
                         <div className="filter-name"><h6>All Gigs</h6></div>
                     </div>
-                    <div className="filters2">
-                        <div className="count">16</div>
+                    <div onClick={()=>{setShow("active")}} className="filters2">
+                        <div className="count">{activeGigs}</div>
                         <div className="filter-name" ><h6>Active Gigs</h6></div>
                     </div>
-                    <div className="filters3">
-                        <div className="count">4</div>
-                        <div className="filter-name"><h6>Approvel Gigs</h6></div>
+                    <div onClick={()=>{setShow("waiting")}} className="filters3">
+                        <div className="count">{aproovelWaitingGigs}</div>
+                        <div className="filter-name"><h6>Approvel waiting Gigs</h6></div>
                     </div>
                 </div>
                 <div className="serch-add">
                     <div className="serch-box">
-                        <input placeholder="Serch gigs" type="text" name="" id="" />
+                        <input onChange={(e) => { setSerchdData(e.target.value) }} placeholder="Serch gigs" type="text" name="" id="" />
                     </div>
                     <div className="add-btn">
                         <div className="btn">
@@ -40,7 +64,7 @@ const Gigs = () =>{
                         </div>
                     </div>
                 </div>
-                <h6 className="pageName">All Gigs</h6>
+                <h6 className="pageName">{show == "all" ? "All Gigs" : show == "active" ? "Active Gigs" : "Un Approvel Gigs" }</h6>
                 <div className="table">
                     <table>
                         <thead >
@@ -53,14 +77,41 @@ const Gigs = () =>{
                             </tr>
                         </thead>
                         <tbody>
+                        {
+                                show == "all" &&
+                                data.map((val) => {
+                                    return <tr>
+                                        <td>{val.title}</td>
+                                        <td>{val.views}</td>
+                                        <td>{val.orders}</td>
+                                        <td>{val.earning}</td>
+                                        <td onClick={() => { setShowModal(!showModal) }}>...</td>
+                                    </tr>
+                                })
+                            }
                             {
-                                data.map((val) => {return <tr>
-                                <td>{val.title}</td>
-                                <td>{val.views}</td>
-                                <td>{val.orders}</td>
-                                <td>{val.earning}</td>
-                                <td onClick={()=>{setShowModal(!showModal)}}>...</td>
-                            </tr>})
+                                show == "active" &&
+                                data.filter((data) =>{return data.status == "active"}).map((val) => {
+                                    return <tr>
+                                        <td>{val.title}</td>
+                                        <td>{val.views}</td>
+                                        <td>{val.orders}</td>
+                                        <td>{val.earning}</td>
+                                        <td onClick={() => { setShowModal(!showModal) }}>...</td>
+                                    </tr>
+                                })
+                            }
+                            {
+                                show == "waiting" &&
+                                data.filter((data) =>{return data.status == "approval waiting"}).map((val) => {
+                                    return <tr>
+                                        <td>{val.title}</td>
+                                        <td>{val.views}</td>
+                                        <td>{val.orders}</td>
+                                        <td>{val.earning}</td>
+                                        <td onClick={() => { setShowModal(!showModal) }}>...</td>
+                                    </tr>
+                                })
                             }
                         </tbody>
                     </table>

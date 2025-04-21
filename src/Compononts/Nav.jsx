@@ -52,6 +52,7 @@ const Nav = () =>{
     };
     useEffect(()=>{
         link1.current.style.backgroundColor = "rgba(128, 0, 128, 0.575)";
+        link1.current.style.color = "white";
     },[])
     useEffect(()=>{
         handleBg();

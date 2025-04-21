@@ -1,25 +1,31 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Dashboard.css"
 import Nav from "./Nav";
 import { useNavigate } from "react-router-dom";
+import { earningData, gigData, orderData } from "./DummyData";
 const Dashboard = () => {
+    const [orderCount,setOrderCount] = useState(0);
+    const [data,setData] = useState(earningData);
+    useEffect(()=>{
+        data.map((val)=>{return val.amount}).forEach((val)=>{setOrderCount((data)=>{return val + data})}); 
+    },[])
     const navigate = useNavigate();
     return (
         <>
             <div className="gigs">
                 <div className="filters">
                     <div onClick={()=>{navigate("/dashboard/gigs")}} className="filters1">
-                        <div className="count">20</div>
+                        <div className="count">{gigData.length}</div>
                         <div className="filter-name"><h6>Gigs</h6></div>
                         <div  className="filter-name"><h6 style={{fontWeight:"bolder",fontSize:"8px"}}>Click to Explore</h6></div>
                     </div>
                     <div onClick={()=>{navigate("/dashboard/earnings")}} className="filters2">
-                        <div className="count">$ 20,000</div>
+                        <div className="count">$ {orderCount}</div>
                         <div className="filter-name" ><h6>Earnings</h6></div>
                         <div  className="filter-name"><h6 style={{fontWeight:"bolder",fontSize:"8px"}}>Click to Explore</h6></div>
                     </div>
                     <div onClick={()=>{navigate("/dashboard/orders")}} className="filters3">
-                        <div className="count">18</div>
+                        <div className="count">{orderData.length}</div>
                         <div className="filter-name"><h6>Orders</h6></div>
                         <div  className="filter-name"><h6 style={{fontWeight:"bolder",fontSize:"8px"}}>Click to Explore</h6></div>
                     </div>
@@ -32,7 +38,7 @@ const Dashboard = () => {
                         <h6 className="heading">Notification 🛎️</h6>
                         <div className="updateuser">
                             <div className="profile">
-                                P
+                                Vm
                             </div>
                             <div className="tittle">
                                 <h6>New Order For You</h6>
@@ -43,7 +49,7 @@ const Dashboard = () => {
                                 <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, mollitia!</h5>
                             </div>
                             <div className="time">
-                                <h6>5 hr ago</h6>
+                                <h6>10 min ago</h6>
                             </div>
                         </div>
                     </div>
@@ -62,7 +68,7 @@ const Dashboard = () => {
                                 <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, mollitia!</h5>
                             </div>
                             <div className="time">
-                                <h6>5 hr ago</h6>
+                                <h6>1 hr ago</h6>
                             </div>
                         </div>
                     </div>
@@ -70,7 +76,7 @@ const Dashboard = () => {
                         <h6 className="heading">Notification 🛎️</h6>
                         <div className="updateuser">
                             <div className="profile">
-                                P
+                                Mp
                             </div>
                             <div className="tittle">
                                 <h6>3 days Reamaining For complete The Order</h6>

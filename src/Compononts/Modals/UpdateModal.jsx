@@ -70,3 +70,35 @@ export const OrderUpdateModal = () => {
         </>
     )
 }
+export const EarningModal = () => {
+    const modal = useRef();
+    const closeModal = () => {
+        modal.current.style.display = "none"
+    }
+    useEffect(() => {
+        modal.current.style.display = ""
+    }, [modal])
+    return (
+        <>
+            <div ref={modal} className="modal">
+                <div className="content">
+                    <h3>Actions</h3>
+                    <hr />
+                    <div className="update">
+                        <div>
+                            <h5> Payment Status : </h5>
+                            <select name="" id="">
+                                <option value="">Withdrawn</option>
+                                <option value="">Pending</option>
+                            </select>
+                            <div className="btns">
+                                <div onClick={closeModal}>Close</div>
+                                <div>Update</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}

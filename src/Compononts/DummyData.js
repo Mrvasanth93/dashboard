@@ -1,5 +1,5 @@
 export const gigData = [
-  { "title": "Web Design", "views": 1250, "orders": 34, "earning": 10200, "status": "active" },
+  { "title": "web Design", "views": 1250, "orders": 34, "earning": 10200, "status": "active" },
   { "title": "UI/UX", "views": 980, "orders": 28, "earning": 8400, "status": "approval waiting" },
   { "title": "App Development", "views": 1500, "orders": 40, "earning": 16000, "status": "active" },
   { "title": "Logo Design", "views": 700, "orders": 18, "earning": 3600, "status": "approval waiting" },

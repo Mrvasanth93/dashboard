@@ -1,19 +1,24 @@
 .modal{
     width:99%;
     position: absolute;
+    background-color: rgba(0, 0, 0, 0.753);
+    backdrop-filter: blur(2px);
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.514);
-    height: 143%;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
 }
 .modal .content{
     background-color: rgba(255, 255, 255, 0.986);
-    width:80%;
-    height: fit-content;
+    width:90%;
     border-radius: 10px;
     padding-bottom: 20px;
-    min-height: 200px;
+    max-width: 400px;
 }
 .modal h3{
     text-align: center;
