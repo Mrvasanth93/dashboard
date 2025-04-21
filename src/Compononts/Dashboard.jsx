@@ -49,7 +49,7 @@ const Dashboard = () => {
                                 <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, mollitia!</h5>
                             </div>
                             <div className="time">
-                                <h6>10 min ago</h6>
+                                <h6>Just Now</h6>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@ const Dashboard = () => {
                                 <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, mollitia!</h5>
                             </div>
                             <div className="time">
-                                <h6>1 hr ago</h6>
+                                <h6>7 Min ago</h6>
                             </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@ const Dashboard = () => {
                                 <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, mollitia!</h5>
                             </div>
                             <div className="time">
-                                <h6>5 hr ago</h6>
+                                <h6>1 hr ago</h6>
                             </div>
                         </div>
                     </div>
