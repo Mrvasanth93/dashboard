@@ -51,6 +51,41 @@
   align-items: center;
   justify-content: left;
 }
+.gigs .pagination{
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 30px;
+  margin-top: 20px;
+  box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.562),
+              -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.562);
+}
+.gigs .pagination .itemsperPage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.gigs .pagination .itemsperPage h6{
+  padding-right: 10px;
+  padding-left: 3px;
+}
+.gigs .pagination .itemsperPage select{
+  width:fit-content;
+  border: none;
+  outline: none;
+  color: orangered;
+}
+.gigs .pagination .page-change{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70px;
+  margin-right: 10px;
+  height: 100%;
+}
 .gigs .serch-add .serch-box input{
   width: 100%;
   height: 100%;

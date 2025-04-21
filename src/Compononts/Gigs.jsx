@@ -10,7 +10,6 @@ const Gigs = () => {
     const [totalGigs,setTotalGigs] = useState(data.length);
     const [activeGigs,setActiveGigs] = useState();
     const [aproovelWaitingGigs,setAproovelWaitingGigs] = useState();
-    console.log(data);
     useEffect(() => {
         handleDataModify(serchData);
     }, [serchData])
@@ -19,7 +18,7 @@ const Gigs = () => {
             setData(gigData)
         }
         else {
-            setData(data.filter((val) => { return val.title.toLowerCase().includes(serchData) }));
+            setData(data.filter((val) => { return val.title.toLowerCase().includes(serchData.toLowerCase())}));
         }
     }
     useEffect(() => {
@@ -65,6 +64,21 @@ const Gigs = () => {
                     </div>
                 </div>
                 <h6 className="pageName">{show == "all" ? "All Gigs" : show == "active" ? "Active Gigs" : "Un Approvel Gigs" }</h6>
+                { /*<div className="pagination">
+                    <div className="itemsperPage">
+                        <h6>Items Per page</h6>
+                        <select name="" id="">
+                            <option value="">5</option>
+                            <option value="">10</option>
+                            <option value="">15</option>
+                        </select>
+                    </div>
+                    <div className="page-change">
+                        <div className="left"> <h4>&lt;</h4> </div>
+                        <div>1</div>
+                        <div className="right"> <h4>&gt;</h4> </div>
+                    </div>
+                </div> */}
                 <div className="table">
                     <table>
                         <thead >

@@ -10,6 +10,23 @@ const Earnings = () => {
     const [pending, setPending] = useState(0);
     const [withdrawn, setWithdrawn] = useState(0);
     const [serchData, setSerchdData] = useState();
+    /*const [pagePerItem, setPagePerItem] = useState(5)
+    const [currentPage, setCurrentPage] = useState(1)
+    const totalPages = Math.ceil(data.length / pagePerItem)
+    const handlePagePerItem = (e) => {
+        setPagePerItem(parseInt(e.target.value))
+        setCurrentPage(1)
+    }
+    const handleChangePage = (page) => {
+        setCurrentPage(page)
+    }
+    const start = (currentPage - 1) * pagePerItem;
+    const end = start - pagePerItem;
+    useEffect(() => {
+        console.log(start + " " + end);
+        
+        setData(data.slice(start,end))
+    },[pagePerItem,currentPage])*/
     useEffect(() => {
         handleDataModify(serchData);
     }, [serchData])
@@ -39,7 +56,7 @@ const Earnings = () => {
     return (
         <>
             {
-                showModal && <EarningModal/>
+                showModal && <EarningModal />
             }
             <div className="gigs">
                 <div className="filters">
