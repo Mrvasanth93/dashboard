@@ -1,0 +1,127 @@
+.card{
+    box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.562),
+              -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.562);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.card .top{
+    width: 96%;
+    margin-left: 2%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.card .top .tittle{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.322);
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+}
+.card .top .views{
+    background-color: wheat;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: tomato;
+    font-size: 10px;
+}
+.card .middle{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 10px;
+    text-align: justify;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 20px;
+    word-spacing: 1px;
+    letter-spacing: 0.2px;
+    line-height: 14px;
+    color: rgba(0, 0, 0, 0.425);
+    font-weight: bolder;
+}
+.card .middle .total-orders{
+    margin-top: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 11px;
+}
+.card .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 96%;
+    margin-left: 2%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.card .bottom .left-bottom h5{
+    color: rgba(0, 0, 0, 0.397);
+    font-size: 8px;
+    margin-top: 5px;
+}
+.card .bottom .left-bottom h3{
+    font-size: 13px;
+}
+.card .bottom .right-bottom{
+}
+.card .bottom .right-bottom .update-btn{
+    padding: 5px 20px;
+    background-color: rgba(29, 29, 255, 0.753);
+    color: white;
+    border-radius: 20px;
+}
+@media (max-width:600px) {
+    .card{
+        flex-basis: 100%;
+    }
+}
+@media (min-width:600px) {
+    .card{
+        flex-basis: 48%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}
+@media (min-width:800px) {
+    .card{
+        flex-basis: 45%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
+}
+@media (min-width:1000px) {
+    .card{
+        flex-basis: 28%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+@media (min-width:1200px) {
+    .card{
+        flex-basis: 21%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+.card hr{
+    margin-top: 10px;
+    background-color: none;
+    border: 1px solid rgba(2, 2, 2, 0.082);
+}
+.card .middle-1{
+    margin-top: 20px;
+}
+.card .middle-1 h3{
+    font-size: 25px;
+}
+.card .middle-1 h5{
+    font-size: 10px;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.664);
+    margin-left: 2%;
+}

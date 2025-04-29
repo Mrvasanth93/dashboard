@@ -10,49 +10,51 @@ const Nav = () =>{
     const location = useLocation();
     const handleBg = (data,e) =>{
         if(data == "link1" || location.pathname == "/dashboard"){
-            link1.current.style.backgroundColor = "rgba(128, 0, 128, 0.575)";
-            link2.current.style.backgroundColor = "";
-            link3.current.style.backgroundColor = "";
-            link4.current.style.backgroundColor = "";
-            link1.current.style.color = "white";
+            link1.current.style.borderBottom = "2px solid rgba(128, 0, 128, 0.575)";
+            link2.current.style.borderBottom = "";
+            link3.current.style.borderBottom = "";
+            link4.current.style.borderBottom = "";
+            link1.current.style.color = "purple";
             link2.current.style.color = "black";
             link3.current.style.color = "black";
             link4.current.style.color = "black";
         }
         if(data == "link2" || location.pathname == "/dashboard/gigs"){
-            link1.current.style.backgroundColor = "";
-            link2.current.style.backgroundColor = "rgba(128, 0, 128, 0.575)";
-            link3.current.style.backgroundColor = "";
-            link4.current.style.backgroundColor = "";
+            link1.current.style.borderBottom = "";
+            link2.current.style.borderBottom = "2px solid rgba(128, 0, 128, 0.575)";
+            link3.current.style.borderBottom = "";
+            link4.current.style.borderBottom = "";
             link1.current.style.color = "black";
-            link2.current.style.color = "white";
+            link2.current.style.color = "purple";
             link3.current.style.color = "black";
             link4.current.style.color = "black";
         }
         if(data == 'link3' || location.pathname == "/dashboard/orders"){
-            link1.current.style.backgroundColor = "";
-            link2.current.style.backgroundColor = "";
-            link3.current.style.backgroundColor = "rgba(128, 0, 128, 0.575)";
-            link4.current.style.backgroundColor = "";
+            link1.current.style.borderBottom = "";
+            link2.current.style.borderBottom = "";
+            link3.current.style.borderBottom = "2px solid rgba(128, 0, 128, 0.575)";
+            link4.current.style.borderBottom = "";
             link1.current.style.color = "black";
             link2.current.style.color = "black";
-            link3.current.style.color = "white";
+            link3.current.style.color = "purple";
             link4.current.style.color = "black";
         }
         if(data == "link4" || location.pathname == "/dashboard/earnings"){
-            link1.current.style.backgroundColor = "";
-            link2.current.style.backgroundColor = "";
-            link3.current.style.backgroundColor = "";
-            link4.current.style.backgroundColor = "rgba(128, 0, 128, 0.575)";
+            link1.current.style.borderBottom = "";
+            link2.current.style.borderBottom = "";
+            link3.current.style.borderBottom = "";
+            link4.current.style.borderBottom = "2px solid rgba(128, 0, 128, 0.575)";
             link1.current.style.color = "black";
             link2.current.style.color = "black";
             link3.current.style.color = "black";
-            link4.current.style.color = "white";
+            link4.current.style.color = "purple";
         }
     };
     useEffect(()=>{
-        link1.current.style.backgroundColor = "rgba(128, 0, 128, 0.575)";
-        link1.current.style.color = "white";
+        link1.current.style.borderBottom  = "2px solid rgba(128, 0, 128, 0.575)";
+        link1.current.style.color = "purple";
+        console.log(link1.current.style);
+        
     },[])
     useEffect(()=>{
         handleBg();

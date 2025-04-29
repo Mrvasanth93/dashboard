@@ -2,14 +2,15 @@ import { act, useEffect, useState } from "react";
 import "./Gigs.css"
 import { GigUpdateModal } from "./Modals/UpdateModal";
 import { gigData } from "./DummyData";
+import Card from "./Card";
 const Gigs = () => {
     const [data, setData] = useState(gigData);
     const [showModal, setShowModal] = useState();
     const [serchData, setSerchdData] = useState();
-    const [show,setShow] = useState("all")
-    const [totalGigs,setTotalGigs] = useState(data.length);
-    const [activeGigs,setActiveGigs] = useState();
-    const [aproovelWaitingGigs,setAproovelWaitingGigs] = useState();
+    const [show, setShow] = useState("all")
+    const [totalGigs, setTotalGigs] = useState(data.length);
+    const [activeGigs, setActiveGigs] = useState();
+    const [aproovelWaitingGigs, setAproovelWaitingGigs] = useState();
     useEffect(() => {
         handleDataModify(serchData);
     }, [serchData])
@@ -18,7 +19,7 @@ const Gigs = () => {
             setData(gigData)
         }
         else {
-            setData(data.filter((val) => { return val.title.toLowerCase().includes(serchData.toLowerCase())}));
+            setData(data.filter((val) => { return val.title.toLowerCase().includes(serchData.toLowerCase()) }));
         }
     }
     useEffect(() => {
@@ -26,13 +27,13 @@ const Gigs = () => {
             setShowModal(true)
         }
     }, [showModal])
-    const calculateGigs = () =>{
-        setActiveGigs(()=>{return data.filter((data)=>data.status == "active").length})
-        setAproovelWaitingGigs(()=>{return data.filter((data)=>data.status == "approval waiting").length})
-     }
-     useEffect(()=>{
-         calculateGigs();
-     },[])
+    const calculateGigs = () => {
+        setActiveGigs(() => { return data.filter((data) => data.status == "active").length })
+        setAproovelWaitingGigs(() => { return data.filter((data) => data.status == "approval waiting").length })
+    }
+    useEffect(() => {
+        calculateGigs();
+    }, [])
     return (
         <>
             {
@@ -40,15 +41,15 @@ const Gigs = () => {
             }
             <div className="gigs">
                 <div className="filters">
-                    <div onClick={()=>{setShow("all")}} className="filters1">
+                    <div onClick={() => { setShow("all") }} className="filters1">
                         <div className="count">{totalGigs}</div>
                         <div className="filter-name"><h6>All Gigs</h6></div>
                     </div>
-                    <div onClick={()=>{setShow("active")}} className="filters2">
+                    <div onClick={() => { setShow("active") }} className="filters2">
                         <div className="count">{activeGigs}</div>
                         <div className="filter-name" ><h6>Active Gigs</h6></div>
                     </div>
-                    <div onClick={()=>{setShow("waiting")}} className="filters3">
+                    <div onClick={() => { setShow("waiting") }} className="filters3">
                         <div className="count">{aproovelWaitingGigs}</div>
                         <div className="filter-name"><h6>Approvel waiting Gigs</h6></div>
                     </div>
@@ -63,22 +64,7 @@ const Gigs = () => {
                         </div>
                     </div>
                 </div>
-                <h6 className="pageName">{show == "all" ? "All Gigs" : show == "active" ? "Active Gigs" : "Un Approvel Gigs" }</h6>
-                { /*<div className="pagination">
-                    <div className="itemsperPage">
-                        <h6>Items Per page</h6>
-                        <select name="" id="">
-                            <option value="">5</option>
-                            <option value="">10</option>
-                            <option value="">15</option>
-                        </select>
-                    </div>
-                    <div className="page-change">
-                        <div className="left"> <h4>&lt;</h4> </div>
-                        <div>1</div>
-                        <div className="right"> <h4>&gt;</h4> </div>
-                    </div>
-                </div> */}
+                <h6 className="pageName">{show == "all" ? "All Gigs" : show == "active" ? "Active Gigs" : "Un Approvel Gigs"}</h6>
                 <div className="table">
                     <table>
                         <thead >
@@ -91,7 +77,7 @@ const Gigs = () => {
                             </tr>
                         </thead>
                         <tbody>
-                        {
+                            {
                                 show == "all" &&
                                 data.map((val) => {
                                     return <tr>
@@ -105,7 +91,7 @@ const Gigs = () => {
                             }
                             {
                                 show == "active" &&
-                                data.filter((data) =>{return data.status == "active"}).map((val) => {
+                                data.filter((data) => { return data.status == "active" }).map((val) => {
                                     return <tr>
                                         <td>{val.title}</td>
                                         <td>{val.views}</td>
@@ -117,7 +103,7 @@ const Gigs = () => {
                             }
                             {
                                 show == "waiting" &&
-                                data.filter((data) =>{return data.status == "approval waiting"}).map((val) => {
+                                data.filter((data) => { return data.status == "approval waiting" }).map((val) => {
                                     return <tr>
                                         <td>{val.title}</td>
                                         <td>{val.views}</td>
@@ -129,6 +115,11 @@ const Gigs = () => {
                             }
                         </tbody>
                     </table>
+                </div>
+                <div className="card-view">
+                    {
+                        data.map((data)=>{return <Card data={data}/>})
+                    }
                 </div>
             </div>
         </>
