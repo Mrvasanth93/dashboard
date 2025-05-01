@@ -3,7 +3,7 @@
               -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.562);
     margin-bottom: 10px;
     margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 .card .top{
     width: 96%;
@@ -15,18 +15,18 @@
     font-size: 12px;
 }
 .card .top .tittle{
-    border-bottom: 2px solid rgba(0, 0, 0, 0.322);
+    border-bottom: 1px solid rgba(0, 128, 128, 0.61);
     padding-bottom: 5px;
     padding-left: 3px;
     padding-right: 3px;
-    color: rgb(0, 0, 0);
-    font-size: 17px;
+    color: rgba(0, 128, 128, 0.61);
+    font-size: 12px;
 }
 .card .top .views{
     background-color: wheat;
     padding: 2px 5px;
     border-radius: 5px;
-    color: tomato;
+    color: #ff6347;
     font-size: 10px;
 }
 .card .middle{
@@ -34,11 +34,11 @@
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    font-size: 10px;
+    font-size: 9px;
     text-align: justify;
     width: 96%;
     margin-left: 2%;
-    margin-top: 20px;
+    margin-top: 10px;
     word-spacing: 1px;
     letter-spacing: 0.2px;
     line-height: 14px;
@@ -60,14 +60,14 @@
     margin-top: 10px;
 }
 .card .bottom .left-bottom h5{
-    color: rgba(0, 0, 0, 0.397);
+    color: rgba(0, 0, 0, 0.562);
     font-size: 8px;
+    letter-spacing: 1px;
     margin-top: 5px;
 }
 .card .bottom .left-bottom h3{
-    font-size: 13px;
-}
-.card .bottom .right-bottom{
+    font-size: 12px;
+    color: purple;
 }
 .card .bottom .right-bottom .update-btn{
     padding: 5px 20px;
@@ -114,14 +114,15 @@
     border: 1px solid rgba(2, 2, 2, 0.082);
 }
 .card .middle-1{
-    margin-top: 20px;
+    margin-top: 10px;
+    width: 100%;
 }
 .card .middle-1 h3{
     font-size: 25px;
 }
 .card .middle-1 h5{
-    font-size: 10px;
-    margin-top: 10px;
+    font-size: 8px;
+    margin-top: 5px;
     color: rgba(0, 0, 0, 0.664);
     margin-left: 2%;
 }

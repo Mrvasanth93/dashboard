@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import "./Gigs.css"
 import { OrderUpdateModal } from "./Modals/UpdateModal";
 import { orderData } from "./DummyData";
+import OrderCard from "./cards/OrderCard";
 const Orders = () => {
     const [showModal, setShowModal] = useState();
     const [data, setData] = useState(orderData);
@@ -10,6 +11,30 @@ const Orders = () => {
     const [totalOrders,setTotalOrders] = useState(data.length);
     const [Completeorders,setComplteOrders] = useState(0);
     const [activeOrders,setActiveOrders] = useState(0);
+    const [view,setView] = useState("table");
+    const tableref = useRef();
+    const cardref = useRef();
+    useEffect(()=>{
+        if(view == "table"){
+            console.log(tableref);
+            tableref.current.style.backgroundColor = "rgba(0, 128, 0, 0.445)"
+            tableref.current.style.border = "1px solid rgba(0, 128, 0, 0.445)"
+            tableref.current.style.borderTopLeftRadius = "5px"
+            tableref.current.style.borderBottomLeftRadius = "5px"
+            cardref.current.style.backgroundColor = ""
+            cardref.current.style.border = ""
+            cardref.current.style.borderRadius = ""
+        }
+        else{
+            cardref.current.style.backgroundColor = "rgba(0, 128, 0, 0.445)"
+            cardref.current.style.border = "1px solid rgba(0, 128, 0, 0.445)"
+            cardref.current.style.borderTopRightRadius = "5px"
+            cardref.current.style.borderBottomRightRadius = "5px"
+            tableref.current.style.backgroundColor = ""
+            tableref.current.style.border= ""
+            tableref.current.style.borderRadius = ""
+        }
+    },[view])
     useEffect(() => {
         if (showModal == false) {
             setShowModal(true)
@@ -58,8 +83,15 @@ const Orders = () => {
                         <input onChange={(e) => { setSerchdData(e.target.value) }} placeholder="Serch gigs" type="text" name="" id="" />
                     </div>
                 </div>
-                <h6 className="pageName">{show == "all" ? "All Orders" : show == "active" ? "Active Orders" : "Completed Orders" }</h6>
-                <div className="table">
+                <div className="view">
+                    <h6 className="pageName">{show == "all" ? "All Orders" : show == "active" ? "Active Orders" : "Completed Orderss"}</h6>
+                    <div className="view-icon">
+                        <h6 ref={tableref} onClick={()=>{setView("table")}} className="tableview">📅</h6>
+                        <h6 ref={cardref} onClick={()=>{setView("card")}} className="cardview">📰</h6>
+                    </div>
+                </div>
+                {
+                    view == "table" ? <div className="table">
                     <table>
                         <thead >
                             <tr>
@@ -115,7 +147,21 @@ const Orders = () => {
                             }
                         </tbody>
                     </table>
+                    </div>:<div className="card-view">
+                    {
+                        show == "all" && 
+                        data.map((data)=>{return <OrderCard data={data}/>})
+                    }
+                    {
+                        show == "active" &&
+                        data.filter((data) =>{return data.status == "Active"}).map((data)=>{return <OrderCard data={data}/>})
+                    }
+                    {
+                        show == "complete" &&
+                        data.filter((data) =>{return data.status == "Completed"}).map((data)=>{return <OrderCard data={data}/>})
+                    }
                 </div>
+                }
             </div>
         </>
     )

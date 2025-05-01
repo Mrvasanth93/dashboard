@@ -7,13 +7,13 @@
   justify-content: center;
   flex-direction: column;
   font-size: 15px;
-  min-height: 100vhś;
+  min-height: 100vhs;
 }
 .gigs .filters{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 96%;
+  width: 97%;
 }
 .gigs .filters .filters1 , .filters2 , .filters3 , .filters4{
   width: 28%;
@@ -26,7 +26,22 @@
   flex-direction: column;
   padding-left: 10px;
   box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.562),
-              -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.562);
+              -0.5px -0.5px 1.5px rgba(0, 0, 0, 0.562);            
+}
+.gigs .filters .filters1{
+  background-image: url("../assets/fd47ebfd82f44c2445ff511c66e2ed3c.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.gigs .filters .filters2{
+  background-image: url("../assets/b2ea8f2746d6c5de42ec52e6124bdc94.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.gigs .filters .filters3{
+  background-image: url("../assets/a86de74984af5324c4ed310eee853b7b.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .gigs .filters .count{
   font-size: 20px;
@@ -120,7 +135,7 @@
   min-height: 100vh;
   width: 90%;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   border-radius: 8px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.562),
@@ -191,7 +206,7 @@
 @media (max-width:300px) {
   .gigs .filters .filters1, .filters2 , .filters3, .filters4{
     width: 25%;
-    
+    height: 20px;
   }
 }
 .gigs .table table .tittle{
@@ -212,4 +227,42 @@
   align-items: center;
   justify-content: center;
   width: 90%;
+}
+.gigs .view{
+  width: 91%;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  margin-top: 10px;
+  position: sticky;
+  top: 110px;
+  background-color: white;
+  padding-bottom: 10px;
+}
+.gigs .view .pageName{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.gigs .view .view-icon{
+  border: 1px solid rgba(0, 128, 0, 0.192);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  border-radius: 5px;
+}
+.gigs .view .view-icon h6{
+  padding:0 7px ;
+  width: 25px;
+  height: 15px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

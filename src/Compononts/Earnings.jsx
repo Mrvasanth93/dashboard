@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import { earningData } from "./DummyData";
 import "./Gigs.css"
 import { EarningModal } from "./Modals/UpdateModal";
+import EarningCard from "./cards/EarningCard";
 const Earnings = () => {
     const [data, setData] = useState(earningData)
     const [showModal, setShowModal] = useState();
@@ -10,23 +11,30 @@ const Earnings = () => {
     const [pending, setPending] = useState(0);
     const [withdrawn, setWithdrawn] = useState(0);
     const [serchData, setSerchdData] = useState();
-    /*const [pagePerItem, setPagePerItem] = useState(5)
-    const [currentPage, setCurrentPage] = useState(1)
-    const totalPages = Math.ceil(data.length / pagePerItem)
-    const handlePagePerItem = (e) => {
-        setPagePerItem(parseInt(e.target.value))
-        setCurrentPage(1)
-    }
-    const handleChangePage = (page) => {
-        setCurrentPage(page)
-    }
-    const start = (currentPage - 1) * pagePerItem;
-    const end = start - pagePerItem;
-    useEffect(() => {
-        console.log(start + " " + end);
-        
-        setData(data.slice(start,end))
-    },[pagePerItem,currentPage])*/
+    const [view,setView] = useState("table");
+    const tableref = useRef();
+    const cardref = useRef();
+    useEffect(()=>{
+        if(view == "table"){
+            console.log(tableref);
+            tableref.current.style.backgroundColor = "rgba(0, 128, 0, 0.445)"
+            tableref.current.style.border = "1px solid rgba(0, 128, 0, 0.445)"
+            tableref.current.style.borderTopLeftRadius = "5px"
+            tableref.current.style.borderBottomLeftRadius = "5px"
+            cardref.current.style.backgroundColor = ""
+            cardref.current.style.border = ""
+            cardref.current.style.borderRadius = ""
+        }
+        else{
+            cardref.current.style.backgroundColor = "rgba(0, 128, 0, 0.445)"
+            cardref.current.style.border = "1px solid rgba(0, 128, 0, 0.445)"
+            cardref.current.style.borderTopRightRadius = "5px"
+            cardref.current.style.borderBottomRightRadius = "5px"
+            tableref.current.style.backgroundColor = ""
+            tableref.current.style.border= ""
+            tableref.current.style.borderRadius = ""
+        }
+    },[view])
     useEffect(() => {
         handleDataModify(serchData);
     }, [serchData])
@@ -78,8 +86,15 @@ const Earnings = () => {
                         <input onChange={(e) => { setSerchdData(e.target.value) }} placeholder="Serch gigs" type="text" name="" id="" />
                     </div>
                 </div>
-                <h6 className="pageName">{show == "all" ? "Total Earnings" : show == "pending" ? "Pending Amounts" : "Withdrawn Amounts"}</h6>
-                <div className="table">
+                <div className="view">
+                    <h6 className="pageName">{show == "all" ? "Total Earnings" : show == "pending" ? "Pending Amounts" : "Withdrawn Amountss"}</h6>
+                    <div className="view-icon">
+                        <h6 ref={tableref} onClick={()=>{setView("table")}} className="tableview">📅</h6>
+                        <h6 ref={cardref} onClick={()=>{setView("card")}} className="cardview">📰</h6>
+                    </div>
+                </div>
+                {
+                    view == "table" ? <div className="table">
                     <table>
                         <thead >
                             <tr>
@@ -138,7 +153,21 @@ const Earnings = () => {
                             }
                         </tbody>
                     </table>
+                </div>:<div className="card-view">
+                    {
+                        show == "all" && 
+                        data.map((data)=>{return <EarningCard data={data}/>})
+                    }
+                    {
+                        show == "pending" &&
+                        data.filter((data) =>{return data.status == "Pending"}).map((data)=>{return <EarningCard data={data}/>})
+                    }
+                    {
+                        show == "withdrawn" &&
+                        data.filter((data) =>{return data.status == "Withdrawn"}).map((data)=>{return <EarningCard data={data}/>})
+                    }
                 </div>
+                }
             </div>
         </>
     )
